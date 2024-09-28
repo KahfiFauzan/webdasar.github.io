@@ -1,12 +1,112 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <tittle>
-        Kahfi Fauzan Habibi
-    </tittle>
-    <body>
-        <p>Kahfi Fauzan Habibi </p>
-        <p> 1202220225 </p>
-        <p> Sistem Informasi </p>
-    </body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; 
+            background: linear-gradient(to bottom right, #80deea, #ccc);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .biodata {
+            background-color: #ffffff; 
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 300px; 
+            transition: transform 0.2s; 
+        }
+
+        .biodata:hover {
+            transform: scale(1.05); 
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #007bb5; 
+            margin: 20px auto; 
+        }
+
+        .namebox {
+            background-color: hsla(195, 10%, 84%, 0.915);
+            border: 2px solid hsl(189, 32%, 72%);
+            width: 100%; 
+            height: 75px;
+            margin: 20px 0; 
+            display: flex; 
+            flex-direction: column; /* Changed to column */
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; 
+            border-radius: 10px;
+        }
+
+        .date-time {
+            font-size: 14px; 
+            color: #555; 
+            margin: 10px 0; 
+        }
+
+        .social-icons {
+            margin-top: 15px; 
+        }
+
+        .social-icons a {
+            margin: 0 10px; 
+            color: #007bb5; 
+            text-decoration: none; 
+            font-size: 28px; 
+            transition: color 0.3s; 
+        }
+
+        .social-icons a:hover {
+            color: #005582; 
+        }
+    </style>
 </head>
+<body>
+
+    <div class="biodata">
+        <img src="https://i.ibb.co/48tWd8M/kahfifauzanh-06012022-0001.jpg" alt="Foto Profil" class="profile-pic">
+        
+        <div class="namebox">
+            <p style="margin: 0;">Kahfi Fauzan Habibi</p> 
+            <p style="margin: 0;">1202220225</p> 
+        </div>
+        
+        <p>Mahasiswa Sistem Informasi Telkom University</p>
+
+        <div class="date-time">
+            <p><span id="datetime"></span></p>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://instagram.com/kahfifauzanh_" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/kahfifauzanh/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var datetime = now.toLocaleString();
+            document.getElementById('datetime').textContent = datetime;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); 
+    </script>
+</body>
 </html>
